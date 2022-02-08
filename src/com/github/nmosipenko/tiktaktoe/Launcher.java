@@ -17,6 +17,8 @@
 package com.github.nmosipenko.tiktaktoe;
 
 
+import com.github.nmosipenko.tiktaktoe.component.*;
+
 /**
  * @author NMOsipenko
  * @link https://github.com/NMOsipenko/

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.github.nmosipenko.tiktaktoe;
+package com.github.nmosipenko.tiktaktoe.component;
 
 import com.github.nmosipenko.tiktaktoe.model.GameTable;
 
