@@ -20,23 +20,21 @@ package com.github.nmosipenko.tiktaktoe.model;
  * @author NMOsipenko
  * @link https://github.com/NMOsipenko/
  */
-public class GameTable {
+public class Cell {
 
-    private final char[][] table = {
-            {' ', ' ', ' '},
-            {' ', ' ', ' '},
-            {' ', ' ', ' '}
-    };
+    private final int col;
+    private final int row;
 
-    public boolean isEmpty (Cell cell) {
-        return table[cell.getRow()][cell.getCol()] == ' ';
+    public Cell(int row, int col) {
+        this.col = col;
+        this.row = row;
     }
 
-    public char getSign (Cell cell) {
-        return table[cell.getRow()][cell.getCol()];
+    public int getCol() {
+        return col;
     }
 
-    public void setSign (Cell cell, char sign) {
-        
+    public int getRow() {
+        return row;
     }
 }
