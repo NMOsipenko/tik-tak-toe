@@ -16,6 +16,8 @@
 
 package com.github.nmosipenko.tiktaktoe.model;
 
+import java.util.Arrays;
+
 /**
  * @author NMOsipenko
  * @link https://github.com/NMOsipenko/
@@ -28,15 +30,28 @@ public class GameTable {
             {' ', ' ', ' '}
     };
 
-    public boolean isEmpty (Cell cell) {
+    public boolean isEmpty(Cell cell) {
         return table[cell.getRow()][cell.getCol()] == ' ';
     }
 
-    public char getSign (Cell cell) {
+    public char getSign(Cell cell) {
         return table[cell.getRow()][cell.getCol()];
     }
 
-    public void setSign (Cell cell, char sign) {
-        
+    public void setSign(Cell cell, char sign) {
+        table[cell.getRow()][cell.getCol()] = sign;
+    }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("GameTable{");
+        sb.append("table=");
+        for (int i = 0; i < table.length; i++) {
+            sb.append(Arrays.toString(table[i]));
+            if (i < table.length - 1)
+                sb.append(";");
+        }
+        sb.append('}');
+        return sb.toString();
     }
 }
