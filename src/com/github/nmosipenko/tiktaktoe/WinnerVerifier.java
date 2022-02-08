@@ -16,24 +16,16 @@
 
 package com.github.nmosipenko.tiktaktoe;
 
-
 /**
  * @author NMOsipenko
  * @link https://github.com/NMOsipenko/
  */
-public class Launcher {
+public class WinnerVerifier {
+    public boolean isUserWin(GameTable gameTable) {
+        return false;
+    }
 
-    public static void main(String[] args) {
-
-        final Game game = new Game(
-                new DataPrinter(),
-                new ComputerMove(),
-                new UserMove(),
-                new WinnerVerifier(),
-                new DrawVerifier()
-        );
-
-        game.play();
-
+    public boolean isComputerWin(GameTable gameTable) {
+        return false;
     }
 }
