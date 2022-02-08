@@ -16,6 +16,8 @@
 
 package com.github.nmosipenko.tiktaktoe;
 
+import com.github.nmosipenko.tiktaktoe.model.GameTable;
+
 /**
  * @author NMOsipenko
  * @link https://github.com/NMOsipenko/
