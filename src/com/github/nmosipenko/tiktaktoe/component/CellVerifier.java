@@ -16,12 +16,22 @@
 
 package com.github.nmosipenko.tiktaktoe.component;
 
+import com.github.nmosipenko.tiktaktoe.model.Cell;
+import com.github.nmosipenko.tiktaktoe.model.GameTable;
+
 /**
  * @author NMOsipenko
  * @link https://github.com/NMOsipenko/
  */
-public class DrawVerifier {
-    public boolean isDraw() {
-        return false;
+public class CellVerifier {
+
+    public boolean allCellsField(GameTable gameTable) {
+
+        for (int i = 1; i < 10; i++) {
+            Cell cell = MoveConveter.getCellByKey(i);
+            if (gameTable.isEmpty(cell))
+                return false;
+        }
+        return true;
     }
 }
