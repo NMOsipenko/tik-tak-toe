@@ -16,6 +16,7 @@
 
 package com.github.nmosipenko.tiktaktoe.component;
 
+import com.github.nmosipenko.tiktaktoe.model.Cell;
 import com.github.nmosipenko.tiktaktoe.model.GameTable;
 
 /**
@@ -24,10 +25,65 @@ import com.github.nmosipenko.tiktaktoe.model.GameTable;
  */
 public class WinnerVerifier {
     public boolean isUserWin(GameTable gameTable) {
-        return false;
+        return isWinner(gameTable, 'X');
     }
 
     public boolean isComputerWin(GameTable gameTable) {
+        return isWinner(gameTable, '0');
+    }
+
+    public boolean isWinner(GameTable gameTable, char ch) {
+
+        //col check
+        for (int i = 1; i < 4; i++) {
+            Cell cell = MoveConveter.getCellByKey(i);
+            if (gameTable.getSign(cell) == ch) {
+                Cell cell2 = MoveConveter.getCellByKey(i + 3);
+                if (gameTable.getSign(cell2) == ch) {
+                    Cell cell3 = MoveConveter.getCellByKey(i + 6);
+                    if (gameTable.getSign(cell3) == ch) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        //row check
+        for (int i = 4; i < 8; i += 3) {
+            Cell cell = MoveConveter.getCellByKey(i);
+            if (gameTable.getSign(cell) == ch) {
+                Cell cell2 = MoveConveter.getCellByKey(i + 1);
+                if (gameTable.getSign(cell2) == ch) {
+                    Cell cell3 = MoveConveter.getCellByKey(i + 2);
+                    if (gameTable.getSign(cell3) == ch) {
+                        return true;
+                    }
+                }
+            }
+        }
+
+        // x chech
+        Cell cell = MoveConveter.getCellByKey(5);
+        if(gameTable.getSign(cell) == ch) {
+
+            Cell cell2 = MoveConveter.getCellByKey(1);
+            if (gameTable.getSign(cell2) == ch) {
+                Cell cell3 = MoveConveter.getCellByKey(9);
+                if (gameTable.getSign(cell3) == ch) {
+                    return true;
+                }
+            }
+
+            cell2 = MoveConveter.getCellByKey(3);
+            if (gameTable.getSign(cell2) == ch) {
+                Cell cell3 = MoveConveter.getCellByKey(7);
+                if (gameTable.getSign(cell3) == ch) {
+                    return true;
+                }
+            }
+        }
+
         return false;
     }
 }
+

@@ -34,9 +34,10 @@ public class ComputerMove {
         while (true) {
             int number = rand.nextInt(9) + 1;
             final Cell cell = MoveConveter.getCellByKey(number);
-            if (gameTable.isEmpty(cell))
+            if (gameTable.isEmpty(cell)) {
                 gameTable.setSign(cell, '0');
-            return;
+                return;
+            }
         }
     }
 

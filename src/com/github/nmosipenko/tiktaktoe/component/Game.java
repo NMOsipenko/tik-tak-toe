@@ -73,7 +73,7 @@ public class Game {
             computerMove.make(gameTable);
             dataPrinter.printGameTable(gameTable);
             if (winnerVerifier.isComputerWin(gameTable)) {
-                System.out.println("YOU WIN!");
+                System.out.println("COMPUTER WIN!");
                 break;
             }
 
@@ -81,7 +81,7 @@ public class Game {
                 System.out.println("Sorry, DRAW!");
                 break;
             }
-            break;
+
         }
 
         System.out.println("GAME OVER!");
