@@ -16,14 +16,37 @@
 
 package com.github.nmosipenko.tiktaktoe.component;
 
+import com.github.nmosipenko.tiktaktoe.model.Cell;
+import com.github.nmosipenko.tiktaktoe.model.GameTable;
+
 /**
  * @author NMOsipenko
  * @link https://github.com/NMOsipenko/
  */
 public class DataPrinter {
+
+    final String line = "-------------";
+    final String row = "| %s | %s | %s |";
+
     public void printMappingTable() {
+        System.out.println(line);
+        System.out.println(String.format(row, 7, 8, 9));
+        System.out.println(line);
+        System.out.println(String.format(row, 4, 5, 6));
+        System.out.println(line);
+        System.out.println(String.format(row, 1, 2, 3));
+        System.out.println(line);
+
     }
 
-    public void printGameTable() {
+    public void printGameTable(GameTable gameTable) {
+        System.out.println(line);
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print("| " + gameTable.getSign(new Cell(i, j)) + " ");
+            }
+            System.out.println("|");
+            System.out.println(line);
+        }
     }
 }

@@ -54,12 +54,12 @@ public class Game {
 
         if (new Random().nextBoolean()) {
             computerMove.make();
-            dataPrinter.printGameTable();
+            dataPrinter.printGameTable(gameTable);
         }
 
         while (true) {
             userMove.make();
-            dataPrinter.printGameTable();
+            dataPrinter.printGameTable(gameTable);
             if (winnerVerifier.isUserWin(gameTable)) {
                 System.out.println("YOU WIN!");
                 break;
@@ -71,7 +71,7 @@ public class Game {
             }
 
             computerMove.make();
-            dataPrinter.printGameTable();
+            dataPrinter.printGameTable(gameTable);
             if (winnerVerifier.isComputerWin(gameTable)) {
                 System.out.println("YOU WIN!");
                 break;
