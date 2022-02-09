@@ -17,27 +17,37 @@
 package com.github.nmosipenko.tiktaktoe.component;
 
 import com.github.nmosipenko.tiktaktoe.model.Cell;
-import com.github.nmosipenko.tiktaktoe.model.GameTable;
-
-import java.util.Random;
 
 /**
  * @author NMOsipenko
  * @link https://github.com/NMOsipenko/
  */
-public class ComputerMove {
+public class MoveConveter {
 
-    public void make(GameTable gameTable) {
+    public static Cell getCellByKey (int key) {
 
-        final Random rand = new Random();
-
-        while (true) {
-            int number = rand.nextInt(9) + 1;
-            final Cell cell = MoveConveter.getCellByKey(number);
-            if (gameTable.isEmpty(cell))
-                gameTable.setSign(cell, '0');
-            return;
+        switch (key) {
+            case (1):
+                return new Cell(2, 0);
+            case (2):
+                return new Cell(2, 1);
+            case (3):
+                return new Cell(2, 2);
+            case  (4):
+                return new Cell(1, 0);
+            case  (5):
+                return new Cell(1, 1);
+            case  (6):
+                return new Cell(1, 2);
+            case  (7):
+                return new Cell(0, 0);
+            case  (8):
+                return new Cell(0, 1);
+            case  (9):
+                return new Cell(0, 2);
+            default:
+                return null;
         }
-    }
 
+    }
 }
