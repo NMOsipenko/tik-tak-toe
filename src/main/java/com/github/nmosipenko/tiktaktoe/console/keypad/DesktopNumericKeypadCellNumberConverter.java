@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.github.nmosipenko.tiktaktoe.keypad;
+package com.github.nmosipenko.tiktaktoe.console.keypad;
 
+import com.github.nmosipenko.tiktaktoe.console.CellNumberConverter;
 import com.github.nmosipenko.tiktaktoe.model.Cell;
 
 import static java.lang.String.format;

@@ -34,7 +34,7 @@ public class WinnerVerifier {
 
     public boolean isWinner(GameTable gameTable, char ch) {
 
-        //col check
+        //coll check
         for (int i = 1; i < 4; i++) {
             Cell cell = MoveConveter.getCellByKey(i);
             if (gameTable.getSign(cell) == ch) {
@@ -49,7 +49,7 @@ public class WinnerVerifier {
         }
 
         //row check
-        for (int i = 4; i < 8; i += 3) {
+        for (int i = 1; i < 8; i += 3) {
             Cell cell = MoveConveter.getCellByKey(i);
             if (gameTable.getSign(cell) == ch) {
                 Cell cell2 = MoveConveter.getCellByKey(i + 1);
