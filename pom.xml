@@ -32,7 +32,7 @@
     <scm>
         <connection>scm:git:git://github.com/NMOsipenko/tik-tak-toe.git</connection>
         <developerConnection>scm:git:ssh://github.com/NMOsipenko/tik-tak-toe.git</developerConnection>
-        <url>http://github.com/NMOsipenko/tik-tak-toe/tree/main</url>
+        <url>https://github.com/NMOsipenko/tik-tak-toe/tree/main</url>
     </scm>
 
     <properties>
@@ -76,6 +76,14 @@
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>${maven-jar-plugin.version}</version>
+                    <configuration>
+                        <archive>
+                            <manifest>
+                                <addClasspath>true</addClasspath>
+                                <mainClass>com.github.nmosipenko.tiktaktoe.Launcher</mainClass>
+                            </manifest>
+                        </archive>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
