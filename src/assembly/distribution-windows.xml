@@ -18,9 +18,9 @@
 
 <assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.0 http://maven.apache.org/xsd/assembly-2.1.0.xsd">
-    <id>unix</id>
+    <id>windows</id>
     <formats>
-        <format>tar</format>
+        <format>zip</format>
     </formats>
     <fileSets>
         <fileSet>
@@ -30,7 +30,7 @@
                 <include>LICENSE</include>
                 <include>NOTICE</include>
             </includes>
-            <lineEnding>unix</lineEnding>
+            <lineEnding>windows</lineEnding>
         </fileSet>
         <fileSet>
             <directory>${project.build.directory}</directory>
@@ -43,10 +43,9 @@
             <directory>${project.basedir}/src/main/scripts</directory>
             <outputDirectory/>
             <includes>
-                <include>*.sh</include>
+                <include>*.cmd</include>
             </includes>
-            <lineEnding>unix</lineEnding>
-            <fileMode>755</fileMode>
+            <lineEnding>windows</lineEnding>
         </fileSet>
     </fileSets>
 </assembly>
